@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "hw-01-clinic-api"
+version = "0.1.0"
+description = "My homework 1 for the course \"Industrial Development Tools\" of the master's program \"Machine Learning and Data-Intensive Systems\" of the Higher School of Economics."
+authors = ["Anton Zaitsev <antonzaitsev474@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "hw_01_clinic_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.104.1"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
