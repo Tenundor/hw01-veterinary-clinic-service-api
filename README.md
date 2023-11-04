@@ -1,4 +1,6 @@
 # hw01-veterinary-clinic-service-api
+Author: Антон Зайцев (МОВС 2023)
+
 My homework 1 for the course "Industrial Development Tools" of the master's program "Machine Learning and Data-Intensive Systems" of the Higher School of Economics
 
 ## Task
