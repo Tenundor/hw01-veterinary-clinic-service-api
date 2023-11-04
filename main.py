@@ -1,4 +1,4 @@
-import random
+from time import time
 from enum import Enum
 
 import fastapi
@@ -57,10 +57,16 @@ async def root():
     ...
 
 
+@app.get('/post', responses={200: {'model': list[Timestamp]}})
+async def get_posts():
+    return post_db
+
+
 @app.post('/post', responses={200: {'model': Timestamp}})
-async def get_post():
-    random_timestamp = random.choice(post_db)
-    return random_timestamp
+async def create_post():
+    post_out = Timestamp(id=len(post_db), timestamp=int(time()))
+    post_db.append(post_out)
+    return post_out
 
 
 @app.get('/dog', responses={200: {'model': list[Dog]}})
