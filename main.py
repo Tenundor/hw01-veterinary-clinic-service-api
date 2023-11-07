@@ -70,8 +70,11 @@ async def create_post():
 
 
 @app.get('/dog', responses={200: {'model': list[Dog]}})
-async def get_dogs(kind: DogType = fastapi.Query(...)):
-    out = (dog for dog in dogs_db.values() if dog.kind == kind.value)
+async def get_dogs(kind: DogType = fastapi.Query(default=None)):
+    if kind is None:
+        out = (dog for dog in dogs_db.values())
+    else:
+        out = (dog for dog in dogs_db.values() if dog.kind == kind.value)
     return out
 
 
